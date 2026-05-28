@@ -1,0 +1,38 @@
+# ── Model weights (too large for GitHub; downloaded at runtime) ──────────────
+*.pt
+*.pth
+*.pkl
+*.ckpt
+*.safetensors
+*.onnx
+*.dat        # dlib shape predictor
+*.npy        # GANSpace PCA directions (downloaded at runtime)
+
+# ── Dataset images ───────────────────────────────────────────────────────────
+# The HDA dataset must be added via Kaggle — do not commit images
+flattened_images/
+*.jpg
+*.jpeg
+*.png
+*.bmp
+
+# ── Notebook outputs / checkpoints ───────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Kaggle working directory outputs ─────────────────────────────────────────
+outputs/
+models/
+repos/
+
+# ── Python cache ─────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+
+# ── OS files ─────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
