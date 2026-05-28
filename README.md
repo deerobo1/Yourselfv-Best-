@@ -1,4 +1,4 @@
-# 🔬 Med-StyleGAN: Plastic Surgery Simulator with Anthropometric Analysis
+# Med-StyleGAN: Plastic Surgery Simulator with Anthropometric Analysis
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
@@ -9,7 +9,7 @@ A deep learning pipeline that simulates plastic surgery outcomes using **GAN inv
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 ```
 Input Face Image
@@ -35,7 +35,7 @@ MediaPipe FaceMesh (468 landmarks) → 16 Clinical Metrics + Report
 
 ---
 
-## ✨ Features
+## Features
 
 - **Interactive surgical controls** — 10 sliders (Nose Bridge, Jaw Width, Chin Projection, Eye Aperture, Lip Fullness, etc.) that manipulate GAN latent directions in real time
 - **GAN inversion** via the [e4e encoder](https://github.com/omertov/encoder4editing) — encodes any real face into the StyleGAN2 W+ space
@@ -49,7 +49,7 @@ MediaPipe FaceMesh (468 landmarks) → 16 Clinical Metrics + Report
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component | Technology |
 |---|---|
@@ -65,7 +65,7 @@ MediaPipe FaceMesh (468 landmarks) → 16 Clinical Metrics + Report
 
 ---
 
-## 🚀 Quick Start (Kaggle)
+## Quick Start (Kaggle)
 
 1. Open the notebook on [Kaggle](https://www.kaggle.com/)
 2. **Settings → Accelerator → GPU T4 x2** (required for StyleGAN2 synthesis)
@@ -74,13 +74,13 @@ MediaPipe FaceMesh (468 landmarks) → 16 Clinical Metrics + Report
 5. Update `DATASET_ROOT` in **Block 0** to match your dataset path
 6. Run cells **top to bottom** — Block 1 installs dependencies (run once), Blocks 2–8 are the live pipeline
 
-> ⚠️ Block 1 (environment setup) takes ~2–3 minutes on first run. After it completes, do **Run → Restart & Clear Output**, then re-run all cells.
+> Block 1 (environment setup) takes ~2–3 minutes on first run. After it completes, do **Run → Restart & Clear Output**, then re-run all cells.
 
 ---
 
-## 📊 Dataset
+## Dataset
 
-> **⚠️ The dataset used in development (`yaswithanandu/hda-data-set`) is a private Kaggle dataset and is not publicly available. No images from this dataset are included in this repository.**
+> ** The dataset used in development (`yaswithanandu/hda-data-set`) is a private Kaggle dataset and is not publicly available. No images from this dataset are included in this repository.**
 
 This project was developed with access to the **HDA Plastic Surgery dataset** — 662 matched pre/post-operative facial image pairs. To run the notebook with your own data, prepare a folder of paired images following this naming convention:
 
@@ -105,7 +105,7 @@ POST_SUFFIX  = "_b"   # change if your files use _after, _post, etc.
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 design-plastic-preview.ipynb
@@ -129,7 +129,7 @@ design-plastic-preview.ipynb
 
 ---
 
-## 📐 Anthropometric Metrics
+## Anthropometric Metrics
 
 All distances are normalized by **Inter-Ocular Distance (IOD)** for scale invariance:
 
@@ -152,7 +152,7 @@ All distances are normalized by **Inter-Ocular Distance (IOD)** for scale invari
 
 ---
 
-## 🔑 Key Design Decisions
+## Key Design Decisions
 
 - **W+ latent space** (vs. Z or W): W+ gives per-layer control, enabling localized edits (e.g., only affecting mid-face layers for nose edits)
 - **IOD normalization**: makes metrics comparable across different image scales and head sizes
@@ -161,11 +161,11 @@ All distances are normalized by **Inter-Ocular Distance (IOD)** for scale invari
 
 ---
 
-## 🔬 Current Implementation vs. Full Research Design
+## Current Implementation vs. Full Research Design
 
 This notebook is a **working prototype** built with transfer learning from pre-trained models. The full research design (described in the project presentation) envisions a supervised training pipeline on the HDA dataset from scratch. The table below documents what is implemented today vs. what the complete system would include.
 
-| Feature | This Prototype ✅ | Full Design 🎯 |
+| Feature | This Prototype  | Full Design |
 |---|---|---|
 | **Encoder** | Pre-trained e4e (pSp-based) | Custom Hybrid Encoder (pSp + PlasticGAN residuals) |
 | **Latent editing** | GANSpace PCA directions (unsupervised) | Learned Latent Mapper trained on HDA pre/post pairs |
@@ -179,7 +179,7 @@ This notebook is a **working prototype** built with transfer learning from pre-t
 
 ---
 
-## 📚 Dataset Citation
+## Dataset Citation
 
 This project uses the **HDA Plastic Surgery dataset**. If you use this work, please cite:
 
