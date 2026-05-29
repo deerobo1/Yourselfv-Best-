@@ -80,7 +80,7 @@ MediaPipe FaceMesh (468 landmarks) → 16 Clinical Metrics + Report
 
 ## Dataset
 
-> ** The dataset used in development (`yaswithanandu/hda-data-set`) is a private Kaggle dataset and is not publicly available. No images from this dataset are included in this repository.**
+> ** The dataset used in development (`HDA Dataset`) is a private Kaggle dataset and is not publicly available. No images from this dataset are included in this repository.**
 
 This project was developed with access to the **HDA Plastic Surgery dataset** — 662 matched pre/post-operative facial image pairs. To run the notebook with your own data, prepare a folder of paired images following this naming convention:
 
